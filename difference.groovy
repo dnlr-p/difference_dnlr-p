@@ -9,6 +9,7 @@ CSG cube = new Cube(baseSize,// X dimention
 // create CSG shape - a sphere
 CSG sphere = new Sphere(baseSize/20*12.5).toCSG()
 CSG sphere2 = new Sphere(baseSize/20*6).toCSG()
+CSG sphere3 = new Sphere(baseSize/20*6).toCSG()
 
 // perform operations
 
@@ -16,6 +17,7 @@ CSG sphere2 = new Sphere(baseSize/20*6).toCSG()
 CSG cubePlusSphere = cube.difference(sphere)
 CSG cubePlusSphere2 = cube.difference(sphere2)
 CSG spherePlusSphere1 = sphere.difference(sphere2)
+CSG spherePlusSphere2 = sphere.union(sphere3)
 
 // move shapes
 
@@ -26,6 +28,8 @@ cubeExample = cube.movex(baseSize*1.5)
 sphereExample = sphere.movey(baseSize*1.5)
 sphere2Example = sphere2.movey(baseSize*7)
 spherePlusSphereMoved = spherePlusSphere1.movey(baseSize*7)
-spherePlusSphereMoved2 = spherePlusSphere1.movey(baseSize*3)
+spherePlusSphereMoved1 = spherePlusSphere1.movey(baseSize*7)
+spherePlusSphere2Moved = spherePlusSphere2.movex(baseSize*9)
+;
 
-return [cubePlusSphere, cubeExample, sphereExample, sphere2Example, spherePlusSphereMoved, spherePlusSphereMoved2.movey(2)]
+return [cubePlusSphere, cubeExample, sphereExample, sphere2Example, spherePlusSphere2Moved]
